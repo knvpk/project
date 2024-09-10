@@ -1,26 +1,31 @@
-{}:
-let  settings = pkgs.formats.toml {
-        nix_shell = { style = "bold green"; };
-      };
-      in
-{
-     packages.${system}.example = pkgs.stdenv.mkDerivation {
+{ pkgs, ... }:
+let 
+settings = {nix_shell = { style = "bold green"; };};
+settingsFormat = pkgs.formats.toml { };
+tomlSettings = settingsFormat.generate "starship.toml" settings;
+in pkgs.stdenv.mkDerivation {
 
-        pname = "my_startship";
-        version = "1.0";
+  pname = "starship1";
+  version = "1.0";
 
-        nativeBuildInputs = [ pkgs.starship ];
-        settingsFile = pkgs.writeText "startship.toml" settings;
+  nativeBuildInputs = [ pkgs.starship ];
+  # settingsFile = pkgs.writeText "startship.toml" tomlSettings;
 
-        installPhase = ''
-          mkdir -p $out/etc/xdg/starship
+  src = null;
+  dontUnpack = true;
 
-          cp $settingsFile $out/etc/xdg/starship
-        '';
+  installPhase = ''
+    mkdir -p $out/starship
+    export STARSHIP_CONFIG=${tomlSettings}
 
-        shellHook = ''
-          export STARTSHIP_CONFIG="$out/etc/xdg/starship/starship.toml"
-        '';
-      };
+    cp ${tomlSettings} $out/starship
+  '';
 
+  env = {
+    STARSHIP_CONFIG="${tomlSettings}";
+  };
+
+  shellHook = ''
+    export STARSHIP_CONFIG=${tomlSettings}
+  '';
 }
