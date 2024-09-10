@@ -1,9 +1,12 @@
 {
   description = "A KNVPK project";
 
-  inputs = { nixpkgs = { url = "github:nixos/nixpkgs?ref=nixos-unstable"; }; };
+  inputs = {
+    nixpkgs = { url = "github:nixos/nixpkgs?ref=nixos-unstable"; };
+    nixvim = { url = "github:nix-community/nixvim?ref=main"; };
+  };
 
-  outputs = { self, nixpkgs, ... }@inputs:
+  outputs = { self, nixpkgs,nixvim, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -14,19 +17,27 @@
       packages.${system}.starship1 =
         (import ./features/starship.nix { inherit pkgs; });
 
+      packages.${system}.nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+        inherit pkgs;
+        module = import ./features/nvim;
+        extraSpecialArgs = { };
+      };
+
+
       #
       # A test shell for testing the features defined.
-      # devShells.${system}.test = pkgs.mkShell {
-      #   name = "test";
-      #   buildInputs = [
-      #     # pkgs.starship1
-      #     # config.packages.starship1
-      #   ];
+      devShells.${system}.test = pkgs.mkShell {
+        name = "test";
+        buildInputs = [
+          # pkgs.starship1
+          # config.packages.starship1
+          # nvim
+        ];
 
-      #   shellHook = ''
-      #     echo "Started the test shell"
-      #   '';
-      # };
+        shellHook = ''
+          echo "Started the test shell"
+        '';
+      };
 
     };
 
