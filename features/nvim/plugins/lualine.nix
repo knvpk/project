@@ -1,7 +1,11 @@
 {
   plugins.lualine = {
     enable = true;
-    iconsEnabled = true;
-    theme = "onedark";
+    settings = {
+      options = {
+        icons_enabled = true;
+        theme = "onedark";
+      };
+    };
   };
 }
