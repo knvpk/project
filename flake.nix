@@ -1,12 +1,12 @@
 {
-  description = "A KNVPK project";
+  description = "A project structure";
 
   inputs = {
     nixpkgs = { url = "github:nixos/nixpkgs?ref=nixos-unstable"; };
     nixvim = { url = "github:nix-community/nixvim?ref=main"; };
   };
 
-  outputs = { self, nixpkgs,nixvim, ... }@inputs:
+  outputs = { self, nixpkgs, nixvim, ... }@inputs:
 
     let
       system = "x86_64-linux";
@@ -14,15 +14,15 @@
     in {
 
       formatter.${system} = pkgs.nixpkgs-fmt;
-      packages.${system}.starship1 =
-        (import ./features/starship.nix { inherit pkgs; });
+      packages.${system} = {
+        starship1 = (import ./features/starship.nix { inherit pkgs; });
 
-      packages.${system}.nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
-        inherit pkgs;
-        module = import ./features/nvim;
-        extraSpecialArgs = { };
+        nvim = nixvim.legacyPackages.${system}.makeNixvimWithModule {
+          inherit pkgs;
+          module = import ./features/nvim;
+          extraSpecialArgs = { };
+        };
       };
-
 
       #
       # A test shell for testing the features defined.

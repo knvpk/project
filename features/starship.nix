@@ -28,4 +28,10 @@ in pkgs.stdenv.mkDerivation {
   shellHook = ''
     export STARSHIP_CONFIG=${tomlSettings}
   '';
+
+  meta = {
+    description = "Sharship with config maintained at sore";
+    license = "mit";
+    maintainers = ["Pavan <katakampavan.btech@gmail.com>"];
+  };
 }
