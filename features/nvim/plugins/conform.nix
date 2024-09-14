@@ -9,6 +9,7 @@
         html = [ "prettier" ];
         # nix = [ "nixfmt" ];
         yaml = [ "prettier" ];
+        python = [ "black" "autopep8" ];
       };
 
       format_on_save = {

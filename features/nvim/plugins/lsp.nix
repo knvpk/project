@@ -129,6 +129,9 @@
 
         settings = { formatting = { cmd = "nixfmt"; }; };
       };
+      pyright = {
+        enable = true;
+      };
     };
   };
 }
