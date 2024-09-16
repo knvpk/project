@@ -12,3 +12,4 @@ A project module written in nix.
 2. Line `starship`
 3. Editor `nixvim` `nvim`
 4. Todo `taskwarrior3`
+5. Commands `just`

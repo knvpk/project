@@ -5,7 +5,7 @@ settingsFormat = pkgs.formats.toml { };
 tomlSettings = settingsFormat.generate "starship.toml" settings;
 in pkgs.stdenv.mkDerivation {
 
-  pname = "starship1";
+  pname = "my_starship";
   version = "1.0";
 
   nativeBuildInputs = [ pkgs.starship ];
@@ -21,12 +21,10 @@ in pkgs.stdenv.mkDerivation {
     cp ${tomlSettings} $out/starship
   '';
 
-  env = {
-    STARSHIP_CONFIG="${tomlSettings}";
-  };
-
   shellHook = ''
     export STARSHIP_CONFIG=${tomlSettings}
+    # TODO:: Either hardcode zsh or auto-detect
+    eval "$(starship init bash)"
   '';
 
   meta = {

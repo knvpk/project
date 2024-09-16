@@ -7,5 +7,8 @@ test1:
 test2:
 	nix develop ./test/proj2 --show-trace
 
+test3:
+	nix develop ./test/proj3 --show-trace
+
 format:
 	nix fmt .
