@@ -2,8 +2,6 @@
   plugins.telescope = {
     enable = true;
 
-    iconsPackage = pkgs.vimPlugins.nvim-web-devicons;
-
     settings = {
       defaults = {
         prompt_prefix = "   ";

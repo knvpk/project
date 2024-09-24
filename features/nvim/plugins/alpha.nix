@@ -1,7 +1,6 @@
 { config, pkgs, ... }: {
   plugins.alpha = {
     enable = true;
-    iconsPackage = pkgs.vimPlugins.nvim-web-devicons;
     layout = [{
       opts = {
         hl = "Type";

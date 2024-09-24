@@ -1,6 +1,8 @@
 {
   plugins."web-devicons" = {
     enable = true;
-    settings = { };
+    settings = { 
+      color_icons = true;
+    };
   };
 }
