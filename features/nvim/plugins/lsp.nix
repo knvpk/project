@@ -121,7 +121,7 @@
 
     servers = {
       lua-ls = { enable = true; };
-      tsserver = { enable = true; };
+      ts-ls = { enable = true; };
       nixd = {
         enable = true;
         cmd = [ "nixd" ];
