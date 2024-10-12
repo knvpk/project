@@ -120,8 +120,8 @@
     };
 
     servers = {
-      lua-ls = { enable = true; };
-      ts-ls = { enable = true; };
+      lua_ls = { enable = true; };
+      ts_ls = { enable = true; };
       nixd = {
         enable = true;
         cmd = [ "nixd" ];
