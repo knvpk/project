@@ -5,6 +5,7 @@
 
     # Plugins
     ./plugins/alpha.nix
+    ./plugins/auto-pair.nix
     ./plugins/auto-session.nix
     ./plugins/bufferline.nix
     ./plugins/cmp.nix
