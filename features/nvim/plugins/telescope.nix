@@ -37,7 +37,7 @@
         options = { desc = "telescope find files"; };
       };
 
-      "<leader>fw" = {
+      "<leader>fg" = {
         mode = "n";
 
         action = "live_grep";
