@@ -1,4 +1,4 @@
-develop:
+ develop:
 	nix develop .#test
 
 test1:
