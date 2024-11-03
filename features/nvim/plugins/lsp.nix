@@ -132,6 +132,15 @@
       pyright = {
         enable = true;
       };
+			phpactor = {
+				enable = true;
+			};
+			yamlls = {
+				enable = true;
+			};
+			jsonls = {
+				enable = true;
+			};
     };
   };
 }
