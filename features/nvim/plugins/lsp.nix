@@ -144,7 +144,7 @@
 			markdown_oxide = {
 				enable = true;
 			};
-			golps = {
+			gopls = {
 				enable = true;
 			};
     };
