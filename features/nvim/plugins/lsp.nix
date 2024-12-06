@@ -144,6 +144,9 @@
 			markdown_oxide = {
 				enable = true;
 			};
+			golps = {
+				enable = true;
+			};
     };
   };
 }
