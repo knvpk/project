@@ -32,16 +32,16 @@
   globals.mapleader = " ";
   opts = { number = true; shiftwidth = 2;   tabstop=2;  };
 
-	# clipboard = {
-		# providers = {
+	clipboard = {
+		providers = {
 		# 	xclip = {
 		# 		enable = true;
 		# 	};
-			# wl-copy = {
-			# 	enable = true;
-			# };
-		# };
-	# };
+			wl-copy = {
+				enable = true;
+			};
+		};
+	};
 
   colorschemes.onedark = { enable = true; };
 
