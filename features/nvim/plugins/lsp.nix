@@ -144,9 +144,9 @@
 			markdown_oxide = {
 				enable = true;
 			};
-			gopls = {
-				enable = true;
-			};
+			# gopls = {
+			# 	enable = true;
+			# };
     };
   };
 }
