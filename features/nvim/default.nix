@@ -37,9 +37,9 @@
 		# 	xclip = {
 		# 		enable = true;
 		# 	};
-			wl-copy = {
-				enable = true;
-			};
+			# wl-copy = {
+			# 	enable = true;
+			# };
 		};
 	};
 
