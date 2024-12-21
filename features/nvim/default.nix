@@ -34,7 +34,10 @@
 
 	clipboard = {
 		providers = {
-			xclip = {
+		# 	xclip = {
+		# 		enable = true;
+		# 	};
+			wl-copy = {
 				enable = true;
 			};
 		};
