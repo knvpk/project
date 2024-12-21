@@ -23,7 +23,7 @@
         ];
 
         shellHook = ''
-          echo "Createing proj1 environment"
+          echo "Createing proj2 environment"
         '';
       };
     };
