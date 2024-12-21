@@ -32,6 +32,14 @@
   globals.mapleader = " ";
   opts = { number = true; shiftwidth = 2;   tabstop=2;  };
 
+	clipboard = {
+		providers = {
+			xclip = {
+				enable = true;
+			};
+		};
+	};
+
   colorschemes.onedark = { enable = true; };
 
   extraConfigLua = builtins.readFile ./lua/init.lua;
