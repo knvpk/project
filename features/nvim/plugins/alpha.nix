@@ -1,7 +1,7 @@
 { config, pkgs, ... }: {
   plugins.alpha = {
     enable = true;
-    layout = [{
+    settings.layout = [{
       opts = {
         hl = "Type";
         position = "center";
