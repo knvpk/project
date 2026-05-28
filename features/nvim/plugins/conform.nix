@@ -1,4 +1,5 @@
-{ config, pkgs, ... }: {
+{ config, pkgs, ... }:
+{
   plugins.conform-nvim = {
     enable = true;
     package = pkgs.vimPlugins.conform-nvim;
@@ -9,13 +10,15 @@
         html = [ "prettier" ];
         # nix = [ "nixfmt" ];
         yaml = [ "prettier" ];
-        python = [ "black" "autopep8" ];
+        python = [ "ruff_format" ];
       };
 
       format_on_save = {
         timeout_ms = 500;
-        lsp_fallback = true;
+        lsp_format = "fallback";
       };
     };
   };
+
+  extraPackages = with pkgs; [ ruff ];
 }

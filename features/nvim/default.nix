@@ -30,7 +30,7 @@
   ];
 
   globals.mapleader = " ";
-  opts = { number = true; shiftwidth = 2;   tabstop=2;  };
+  opts = { number = true; shiftwidth = 2; tabstop = 2; expandtab = true; };
 
 	clipboard = {
 		register = "unnamedplus";

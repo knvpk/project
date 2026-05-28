@@ -30,7 +30,7 @@
       mode = "i";
       key = "<C-b>";
       action = "<ESC>^i";
-      options = { desc = "Move begining of the line"; };
+      options = { desc = "Move beginning of the line"; };
     }
     {
       mode = "i";
@@ -54,7 +54,7 @@
       mode = "i";
       key = "<C-j>";
       action = "<Down>";
-      options = { desc = "Move donw"; };
+      options = { desc = "Move down"; };
     }
     {
       mode = "i";

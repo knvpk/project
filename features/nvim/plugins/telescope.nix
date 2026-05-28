@@ -19,9 +19,9 @@
         mappings = {
           n = { "q" = { __raw = "require ('telescope.actions').close"; }; };
         };
-
-        extensions = { fzf-native = { enable = true; }; };
       };
+
+      extensions = { fzf-native = { enable = true; }; };
     };
 
     # TODO:: Figureout these

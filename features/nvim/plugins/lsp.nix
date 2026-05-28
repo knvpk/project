@@ -88,7 +88,7 @@
           key = "<leader>rn";
           action = "<cmd>lua vim.lsp.buf.rename()<CR>";
           options = {
-            desc = "References";
+            desc = "Rename symbol";
             silent = true;
           };
         }
@@ -110,9 +110,9 @@
         }
         {
           key = "<leader>f";
-          action = "<cmd>lua vim.lsp.buf.formatting()<CR>";
+          action = "<cmd>lua vim.lsp.buf.format()<CR>";
           options = {
-            desc = "Do format";
+            desc = "Format buffer";
             silent = true;
           };
         }
